@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mother helps postpartum mothers organize recovery, prioritize rest, and coordinate support.">
+  <title>Mother | Postpartum Care Planning</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <a href="#" class="brand">
+        <span class="brand-icon">🌺</span>
+        <img src=""> <!-- ADD MOTHER LOGO HERE-->
+        <span>Mother</span>
+      </a>
+
+      <p class="sidebar-tagline">Mothering the Mother.</p>
+
+      <nav class="navigation">
+        <a href="#home" class="nav-link active">🏡 Home</a>
+        <a href="#plan" class="nav-link">📝 My Plan</a>
+        <a href="#tasks" class="nav-link">☑️ Tasks</a>
+        <a href="#support" class="nav-link">🤍 Support</a>
+        <a href="#progress" class="nav-link">🚀  Progress</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p>You've got this, Mom.</p>
+        <p>And we've got you 🤍</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="home">
+
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">YOUR PERSONAL RECOVERY SPACE</span>
+          <h1>Good morning, Mom. ☀️</h1>
+          <p>You've got enough on your hands. Let Mother handle it. </p>
+        </div>
+
+        <div class="date-display" id="today-date"></div>
+      </header>
+
+      <!-- SUMMARY CARDS -->
+      <section class="summary-grid">
+
+        <article class="summary-card">
+          <span class="card-icon">📅</span>
+          <div>
+            <p>Today's Plan</p>
+            <h2 id="total-tasks">3 Tasks</h2>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <span class="card-icon">✅</span>
+          <div>
+            <p>Completed</p>
+            <h2 id="completed-tasks">5</h2>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <span class="card-icon">🤍</span>
+          <div>
+            <p>Needs Support</p>
+            <h2 id="support-count">2 Tasks</h2>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <span class="card-icon"> 🚀</span>
+          <div>
+            <p>Progress</p>
+            <h2 id="progress-percent">33%</h2>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- MOTHER VOICE -->
+      <section class="voice-section" id="capture">
+        <div class="voice-intro">
+          <span class="eyebrow">MEET MOTHER VOICE</span>
+          <h2>What's on your mind, Mom?</h2>
+          <p>Speak naturally. Mother will help organize your thoughts into manageable tasks.</p>
+        </div>
+
+        <button id="voice-button" class="voice-button" type="button">
+          <span>🎙️</span> Mother Voice
+        </button>
+
+        <p id="voice-status" class="voice-status" aria-live="polite">Tap the microphone to start speaking.</p>
+
+        <label for="task-input" class="input-label">
+          Or type what's on your mind
+        </label>
+
+        <textarea
+          id="task-input"
+          placeholder="Example: Ask my sister to bring dinner tomorrow and call my doula on Friday..."
+          rows="3"
+        ></textarea>
+
+        <div class="capture-actions">
+          <button id="convert-button" class="button-secondary" type="button">
+            Convert to Tasks
+          </button>
+          <button id="save-button" class="button-primary" type="button" disabled>
+            Save Tasks to My Plan
+          </button>
+        </div>
+
+        <div id="review-section" class="review-section" hidden>
+          <h3>Review your tasks</h3>
+          <p>Check that Mother understood you correctly.</p>
+          <div id="review-list"></div>
+        </div>
+      </section>
+
+      <!-- RECOVERY PLAN -->
+      <section class="content-section" id="plan">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ONE STEP AT A TIME</span>
+            <h2>Your Recovery Plan</h2>
+          </div>
+          <span class="section-note">Your day, your pace.</span>
+        </div>
+
+        <div class="plan-layout">
+          <div class="task-panel" id="tasks">
+
+            <div class="panel-heading">
+              <h3>Today's Priorities</h3>
+              <span id="task-date"></span>
+            </div>
+
+            <div id="task-list" class="task-list">
+              <!-- <p class="empty-state">Loading your recovery plan...</p> -->
+            </div>
+
+          </div>
+
+          <div class="plan-side">
+
+            <article class="progress-panel" id="progress">
+              <h3>Your Progress</h3>
+
+              <div class="progress-track">
+                <div id="progress-bar" class="progress-fill"></div>
+              </div>
+
+              <p id="progress-message">Every small step matters.</p>
+            </article>
+
+            <article class="rest-panel">
+              <span>🔋</span>
+              <h3>Remember to rest</h3>
+              <p>
+                Your recovery matters. You don't have to
+                complete everything today.
+              </p>
+            </article>
+
+            <article class="delegation-panel">
+              <span>🤝</span>
+              <h3>Let someone help</h3>
+              <p id="delegation-message">
+                You don't have to do everything yourself.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SUPPORT  -->
+      <section class="content-section" id="support">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">YOUR VILLAGE</span>
+            <h2>Support & Delegation</h2>
+          </div>
+        </div>
+
+        <div class="support-panel">
+          <h3>Tasks that need an extra hand 🤲</h3>
+          <p>
+            Identify what you'd like someone else to help you with.
+          </p>
+          <div id="support-list" class="support-list">
+            <p class="empty-state">No support requests yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Mothering the Mother. 🤍</p>
+        <small>Supporting your recovery, one step at a time.</small>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
