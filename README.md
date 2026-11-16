@@ -69,7 +69,8 @@ npm start
 6. Open http://localhost:3000 in your browswer
 
 # Preview 
-<img width="1833" height="1071" alt="Screenshot 2026-11-08 at 10 59 11 PM" src="https://github.com/user-attachments/assets/f0390106-d1e4-490f-bc04-6fb5efd14e56" />
+<img width="664" height="194" alt="new-mother-banner" src="https://github.com/user-attachments/assets/5daf9931-9c4f-4418-bda7-f44ee0c6c285" />
+
 
 # Project Philosophy
 **Mother** was created around a simple but important idea: postpartum care should include caring for the mother, not just the baby.
